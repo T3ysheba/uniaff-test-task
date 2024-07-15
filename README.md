@@ -1,1 +1,2 @@
-# uniaff-test-task
+# POKEMON_PROJECT
+Practice project

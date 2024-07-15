@@ -1,0 +1,26 @@
+@import 'styles/vars';
+@import 'styles/colors';
+@import 'styles/typography';
+
+.wrapper {
+  @extend %flex-center;
+  @extend %highlight-text;
+  gap: 10px;
+  width: 100%;
+  color: $white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: 0.6s all;
+  background-color: $primary;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    opacity: 1;
+    background-color: $tertiary;
+  }
+}

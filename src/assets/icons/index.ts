@@ -1,0 +1,5 @@
+export { ReactComponent as HideIcon } from './hide.svg'
+export { ReactComponent as ShowIcon } from './show.svg'
+export { ReactComponent as LockIcon } from './lock.svg'
+export { ReactComponent as EmailIcon } from './email.svg'
+export { ReactComponent as ErrorIcon } from './error.svg'
