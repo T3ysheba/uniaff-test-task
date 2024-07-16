@@ -65,16 +65,15 @@ const Input = forwardRef(
     }
 
     return (
-      <div data-testid='input-wrapper' className={classNames(className, styles.wrapper)}>
+      <div className={classNames(className, styles.wrapper)}>
         <div className={styles.wrapper__box}>
-          {Icon ? <Icon data-testid='input-icon' className={styles.wrapper__icon} /> : null}
+          {Icon ? <Icon className={styles.wrapper__icon} /> : null}
 
           <input
             ref={ref}
             name={name}
             value={value}
             disabled={disabled}
-            data-testid='input'
             maxLength={maxLength}
             minLength={minLength}
             onBlur={onBlurHandler}
@@ -99,7 +98,6 @@ const Input = forwardRef(
               {isPassword ? (
                 <div
                   onClick={eyeIconToggler}
-                  data-testid='input-password'
                   className={classNames(styles.wrapper__box__eye, { [styles.wrapper__box__eye__open]: isOpen })}
                 >
                   {!isOpen ? <HideIcon /> : <ShowIcon />}

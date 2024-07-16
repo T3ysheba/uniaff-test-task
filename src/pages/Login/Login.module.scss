@@ -12,18 +12,18 @@
     @extend %flex-column-center;
     width: 100%;
     max-width: 535px;
+
+    &__title {
+      @extend %heading-1;
+      color: $black-400;
+      text-align: center;
+      animation: fadeIn 1s 1 forwards ease;
+    }
   }
 
   &__form {
     @extend %flex-column-center;
     width: 100%;
-  }
-
-  &__title {
-    @extend %heading-1;
-    color: $black-400;
-    text-align: center;
-    animation: fadeIn 1s 1 forwards ease;
   }
 
   &__input__column {

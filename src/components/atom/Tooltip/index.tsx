@@ -1,22 +1,25 @@
 import { useEffect, useState, type FC } from 'react'
+import classNames from 'classnames'
 
 import type { TTooltipProps } from './types'
 import styles from './Tooltip.module.scss'
-import classNames from 'classnames'
 
 const Tooltip: FC<TTooltipProps> = ({ children, content, className, showFromStart }) => {
   const [visible, setVisible] = useState(false)
 
-  const mouseEnterHandler = () => setVisible(true)
-  const mouseLeaveHandler = () => setVisible(false)
+  const mouseEventHandler = (visibleStatus: boolean) => {
+    setVisible(visibleStatus)
+  }
 
   useEffect(() => {
     if (showFromStart) {
       setVisible(true)
 
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         setVisible(false)
       }, 2300)
+
+      return () => clearTimeout(timeoutId)
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,8 +28,8 @@ const Tooltip: FC<TTooltipProps> = ({ children, content, className, showFromStar
   return (
     <div
       className={classNames(className, styles.wrapper)}
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
+      onMouseEnter={() => mouseEventHandler(true)}
+      onMouseLeave={() => mouseEventHandler(false)}
     >
       {children}
       <p className={classNames(styles.wrapper__content, { [styles.wrapper__content__visible]: visible })}>{content}</p>

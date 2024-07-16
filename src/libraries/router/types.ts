@@ -8,5 +8,6 @@ export type TRoutePageType = {
 }
 
 export enum ERoutePaths {
+  Error = '*',
   Login = '/',
 }

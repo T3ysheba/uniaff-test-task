@@ -1,8 +1,7 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import classNames from 'classnames'
 
-import { TLoader } from './types'
-
+import type { TLoader } from './types'
 import styles from './Loader.module.scss'
 
 const emptyArray = new Array(4).fill('')
@@ -11,7 +10,6 @@ const Loader: FC<TLoader> = ({ className = '', color = '#fff', size = '20px' }) 
   const renderEmptyBlocks = emptyArray.map((_, idx) => (
     <div
       key={idx}
-      data-testid='empty-blocks'
       style={{
         width: size,
         height: size,
@@ -21,7 +19,7 @@ const Loader: FC<TLoader> = ({ className = '', color = '#fff', size = '20px' }) 
   ))
 
   return (
-    <div className={classNames(styles.wrapper, className)} data-testid='loader' style={{ width: size, height: size }}>
+    <div className={classNames(styles.wrapper, className)} style={{ width: size, height: size }}>
       {renderEmptyBlocks}
     </div>
   )

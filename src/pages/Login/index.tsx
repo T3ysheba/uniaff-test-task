@@ -38,7 +38,7 @@ const Login: FC = () => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.wrapper__container}>
-        <h1 className={styles.wrapper__title}>Войдите в свой профиль</h1>
+        <h1 className={styles.wrapper__container__title}>Войдите в свой профиль</h1>
 
         <form className={styles.wrapper__form} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.wrapper__input__column}>
@@ -67,12 +67,7 @@ const Login: FC = () => {
           </NavLink>
 
           <div className={styles.wrapper__button__column}>
-            <Button
-              isLoading={loading}
-              type='submit'
-              disabled={!isValid || isDirty}
-              onClick={() => handleSubmit(onSubmit)}
-            >
+            <Button isLoading={loading} type='submit' disabled={!isValid || !isDirty}>
               Войти
             </Button>
 
